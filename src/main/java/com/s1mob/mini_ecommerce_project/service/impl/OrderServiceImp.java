@@ -19,6 +19,11 @@ public class OrderServiceImp implements OrderService {
     }
 
     @Override
+    public void deleteOrder(String id) {
+         repository.deleteById(id);
+    }
+
+    @Override
     public List getAllOrders() {
         List orders = new ArrayList();
         repository.findAll().forEach(orders::add);
