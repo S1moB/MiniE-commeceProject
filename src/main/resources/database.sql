@@ -6,9 +6,10 @@ CREATE TABLE product(
  PRIMARY KEY (productId)
 );
 
-CREATE TABLE order(
-    productId varchar(11) REFERENCES  product(productId),
+CREATE TABLE ordertbl(
+    productId varchar(11),
     orderId varchar(11) NOT NULL ,
-    orderQuantity bigint,
-    PRIMARY KEY (orderId)
+    orderQuantity integer ,
+    PRIMARY KEY (orderId),
+     FOREIGN KEY (productId) REFERENCES product(productId)
 );
