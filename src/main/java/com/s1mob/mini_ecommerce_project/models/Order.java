@@ -22,5 +22,6 @@ public class Order {
     String orderId;
     int orderQuantity;
     @ManyToOne
-    Product productId;
+    @JoinColumn(name = "productId")
+    Product product;
 }
